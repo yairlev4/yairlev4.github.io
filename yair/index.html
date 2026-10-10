@@ -1,1 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Contact</title>
+<style>
+  :root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #1c2430;
+    --muted: #6b7684;
+    --accent: #1f4e79;
+    --line: #e3e7ec;
+    --wa: #1fa855;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+  }
+  .card {
+    background: var(--card);
+    width: 100%;
+    max-width: 380px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(20, 40, 70, 0.08);
+    overflow: hidden;
+    text-align: center;
+  }
+  .band { height: 6px; background: var(--accent); }
+  .body { padding: 36px 28px 30px; }
+  .initials {
+    width: 76px; height: 76px; border-radius: 50%;
+    margin: 0 auto 18px;
+    background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; font-weight: 600; letter-spacing: 1px;
+  }
+  .initials img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+  .initials.has-photo { width: 104px; height: 104px; background: none; box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--accent); }
+  h1 { font-size: 24px; font-weight: 650; letter-spacing: -0.2px; }
+  .role { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  .addr { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  .addr:empty { display: none; }
+  .note {
+    margin-top: 22px; padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 14px; color: var(--muted); line-height: 1.5;
+  }
+  .phone {
+    display: block; margin-top: 18px;
+    font-size: 20px; font-weight: 600; color: var(--text);
+    text-decoration: none; letter-spacing: 0.5px;
+    direction: ltr;
+  }
+  .btns { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 14px; border-radius: 12px;
+    font-size: 16px; font-weight: 600; text-decoration: none;
+  }
+  .btn svg { width: 20px; height: 20px; }
+  .wa { background: var(--wa); color: #fff; }
+  .call { background: #fff; color: var(--accent); border: 1.5px solid var(--accent); }
+  .save { background: none; color: var(--muted); font-weight: 500; font-size: 14px; padding: 8px; }
+</style>
+</head>
+<body>
 
+<!-- ============ EDIT ONLY THIS BLOCK FOR EACH PERSON ============ -->
+<script>
+  const PERSON = {
+    name:    "Dr. Yair Levinger",
+    role:    "Intern / Stager",
+    phone:   "+972 54-522-4299",          // shown on the page
+    intl:    "972545224299",              // digits only, no + or 0 at start (for WhatsApp)
+    photo:   "photo.jpg",                 // optional: image file in the same folder, "" for initials
+    address: "7 Wissotsky St., Tel Aviv", // optional: leave "" to hide
+    note:    "If you found this item, please get in touch. Thank you!"
+  };
+</script>
+<!-- ============================================================== -->
+
+<main class="card">
+  <div class="band"></div>
+  <div class="body">
+    <div class="initials" id="initials"></div>
+    <h1 id="name"></h1>
+    <p class="role" id="role"></p>
+    <p class="addr" id="addr"></p>
+    <p class="note" id="note"></p>
+    <a class="phone" id="phone"></a>
+    <div class="btns">
+      <a class="btn wa" id="wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>
+        WhatsApp me
+      </a>
+      <a class="btn call" id="call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Call
+      </a>
+      <a class="btn save" id="save">Save contact</a>
+    </div>
+  </div>
+</main>
+
+<script>
+  const p = PERSON;
+  const clean = p.name.replace(/^(Dr\.?|Prof\.?)\s+/i, "");
+  const initials = clean.split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase();
+  document.title = p.name;
+  const av = document.getElementById("initials");
+  if (p.photo) {
+    const img = document.createElement("img");
+    img.src = p.photo; img.alt = p.name;
+    img.onerror = () => { av.className = "initials"; av.textContent = initials; };
+    av.classList.add("has-photo"); av.appendChild(img);
+  } else { av.textContent = initials; }
+  document.getElementById("name").textContent = p.name;
+  document.getElementById("role").textContent = p.role;
+  document.getElementById("addr").textContent = p.address || "";
+  document.getElementById("note").textContent = p.note;
+  const ph = document.getElementById("phone");
+  ph.textContent = p.phone;
+  ph.href = "tel:+" + p.intl;
+  document.getElementById("call").href = "tel:+" + p.intl;
+  document.getElementById("wa").href = "https://wa.me/" + p.intl;
+  const vcf = "BEGIN:VCARD\nVERSION:3.0\nFN:" + p.name + "\nTITLE:" + p.role +
+              "\nTEL;TYPE=CELL:+" + p.intl +
+              (p.address ? "\nADR;TYPE=WORK:;;" + p.address + ";;;;" : "") + "\nEND:VCARD";
+  const save = document.getElementById("save");
+  save.href = "data:text/vcard;charset=utf-8," + encodeURIComponent(vcf);
+  save.download = clean.replace(/\s+/g, "_") + ".vcf";
+</script>
+</body>
+</html>
